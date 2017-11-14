@@ -18,19 +18,15 @@ h_0 = tf(K*K_pd, [T_f 1 0]);
 sim('PD_wave_disturbances');
 
 %% Plotting
-time = PD_wave_disturbances(:,1);
-reference = PD_wave_disturbances(:,2);
-bias = PD_wave_disturbances(:,3);
-psi = PD_wave_disturbances(:,4);
-
 figure
-plot(time,reference, 'r'); hold on;
-plot(time, bias, 'g'); hold on;
-plot(time, psi, 'b'); grid on;
-
+plot(PD_wave_disturbances(:,1),PD_wave_disturbances(:,2),'r','LineWidth', 1); hold on;
+plot(PD_wave_disturbances(:,1),PD_wave_disturbances(:,3),'Color',[0 0.75 0.75],'LineWidth', 1); hold on;
+plot(PD_wave_disturbances(:,1),PD_wave_disturbances(:,4),'b','LineWidth', 1); grid on;
 title('Wave disturbances');
-xlabel('Time [sec]');
-ylabel('Degrees');
+xlabel('Time [s]');
+ylabel('Course angle [deg]');     %??????
+legend('Reference','Rudder angle','Compass course');
+axis([0 500 -20 50]);
 
 
 

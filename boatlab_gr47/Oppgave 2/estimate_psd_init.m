@@ -19,16 +19,22 @@ omega = f.*(2*pi);      %converting f [Hz] to f [rad/s]
 omega_0 = omega(indexMaxValPSD);
 sigma = sqrt(maxValPSD);
 
-lambda = 0.085;
+lambda = 0.045:0.020:0.125;
 K_w = 2*lambda.*omega_0*sigma;
 psd = (omega.*K_w).^2./(omega.^4 + omega_0^4 + 2*omega_0^2*omega.^2*(2*lambda.^2-1));
 
 %% Plotting
 figure
 plot(omega,est_psd,'Linewidth',1); hold on;
-plot(omega,psd,'Linewidth',1); grid
+plot(omega,psd,'--','Linewidth',1); grid
 title('Estimate of Power Spectral Density (PSD)')
 xlabel('[rad / sec]');
 ylabel('[(power * sec) / rad]');
-legend('Estimate of PSD','Analytical PSD with \lambda = 0.085');
-axis([0 1.75 0 1.6e-3]);
+legend('Estimate of PSD','Analytical PSD with \lambda = 0.045','Analytical PSD with \lambda = 0.065',...
+    'Analytical PSD with \lambda = 0.085','Analytical PSD with \lambda = 0.105','Analytical PSD with \lambda = 0.125');
+axis([0 2 0 1.6e-3]);
+
+figure
+plot(omega,est_psd,'Linewidth',1); hold on;
+plot(omega,psd,'--','Linewidth',1); grid
+axis([0.55 1.05 0 1.6e-3]);

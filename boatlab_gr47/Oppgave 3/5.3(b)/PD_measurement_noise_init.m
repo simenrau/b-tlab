@@ -18,25 +18,15 @@ h_0 = tf(K*K_pd, [T_f 1 0]);
 sim('PD_measurement_noise');
 
 %% Plotting
-
-time = PD_measurement_noise(:,1);
-reference = PD_measurement_noise(:,2);
-bias = PD_measurement_noise(:,3);
-psi = PD_measurement_noise(:,4);
-
 figure
-
-plot(time,reference, 'r');
-hold on
-plot(time, bias, 'g');
-hold on
-plot(time, psi, 'b');
-grid;
-
+plot(PD_measurement_noise(:,1),PD_measurement_noise(:,2),'r','LineWidth', 1); hold on;
+plot(PD_measurement_noise(:,1),PD_measurement_noise(:,3),'Color',[0 0.75 0.75],'LineWidth', 1); hold on;
+plot(PD_measurement_noise(:,1),PD_measurement_noise(:,4),'b','LineWidth', 1); grid on;
 title('Measurement noise only');
-xlabel('Time [sec]');
-ylabel('Degrees');
-
+xlabel('Time [s]');
+ylabel('Course angle [deg]');
+legend('Reference','Rudder angle','Compass course');
+axis([0 500 -20 50]);
 
 
 
