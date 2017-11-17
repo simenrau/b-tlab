@@ -22,9 +22,9 @@ figure
 plot(PD_measurement_noise(:,1),PD_measurement_noise(:,2),'r','LineWidth', 1); hold on;
 plot(PD_measurement_noise(:,1),PD_measurement_noise(:,3),'Color',[0 0.75 0.75],'LineWidth', 1); hold on;
 plot(PD_measurement_noise(:,1),PD_measurement_noise(:,4),'b','LineWidth', 1); grid on;
-title('Measurement noise only');
+title('Measurement noise with PD-regulator');
 xlabel('Time [s]');
-ylabel('Course angle [deg]');
+ylabel('Angle [deg]');
 legend('Reference','Rudder angle','Compass course');
 axis([0 500 -20 50]);
 

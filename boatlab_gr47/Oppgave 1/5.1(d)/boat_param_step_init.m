@@ -25,9 +25,9 @@ plot(boat_param_step_ship(:,1), boat_param_step_ship(:,2), 'LineWidth', 1); hold
 plot(boat_param_step_model(:,1), boat_param_step_model(:,2), 'LineWidth', 1); hold on; 
 plot(boat_param_step_model_noise(:,1), boat_param_step_model_noise(:,2),'--','LineWidth', 1); grid on; 
 xlabel('Time [s]')    
-ylabel('Amplitude [deg]')           %Tror dette stemmer
+ylabel('Amplitude [deg]')
 legend('Ship','Model','Model with noise','Location','Northwest')
-title('Comparing step respons of model with step respons of ship')
+title('Comparing step respons of ship with step response of model')
 
 
 

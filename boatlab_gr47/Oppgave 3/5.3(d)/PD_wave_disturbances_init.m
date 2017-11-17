@@ -22,9 +22,9 @@ figure
 plot(PD_wave_disturbances(:,1),PD_wave_disturbances(:,2),'r','LineWidth', 1); hold on;
 plot(PD_wave_disturbances(:,1),PD_wave_disturbances(:,3),'Color',[0 0.75 0.75],'LineWidth', 1); hold on;
 plot(PD_wave_disturbances(:,1),PD_wave_disturbances(:,4),'b','LineWidth', 1); grid on;
-title('Wave disturbances');
+title('Wave disturbances with PD-regulator');
 xlabel('Time [s]');
-ylabel('Course angle [deg]');     %??????
+ylabel('Angle [deg]');  
 legend('Reference','Rudder angle','Compass course');
 axis([0 500 -20 50]);
 

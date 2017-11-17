@@ -47,7 +47,7 @@ D_d = D;
 %% Estimating variance of the measurement noise
 sim('measurement_noise');
 
-variance = var(measurement_noise(:,2)*pi/180);
+variance = var(measurement_noise(:,2).*pi/180);
 
 
 

@@ -3,7 +3,7 @@ close all
 clc
 
 %% Loading previously generated data
-load('boat_param1_sine');    %frequency 0.005
+load('boat_param1_sine');     %frequency 0.005
 load('boat_param2_sine');     %frequency 0.05
 
 %% Plotting
